@@ -6,110 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Users</title>
-        <style>
-            .grid-container {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                padding: 10px;
-            }
-            .grid-item {
-                margin: 15px;
-            }
-
-            .grid-item > h3 {
-                /*                text-align: center;*/
-            }
-
-            table {
-                width: 100%;
-            }
-
-            input, select {
-                width: 100%;
-                margin-bottom: 8px;
-            }
-
-            #messageBox {
-                color: red;
-                text-align: center;
-                border-radius: 5px;
-                background-color: white;
-                padding: 1px;
-                font-weight: bold;
-                width: 250px;
-                position: absolute;
-                top: -300px;
-                left: 50%;
-                transform: translateX(-50%);
-                animation: messageDropdown 4.0s ease-in-out;
-                -webkit-box-shadow: 4px 4px 11px 2px #ccc; 
-                -moz-box-shadow:    4px 4px 11px 2px #ccc; 
-                box-shadow:         4px 4px 11px 2px #ccc;  
-
-            }
-
-            @keyframes messageDropdown {
-                0% {top: -300px;}
-                10% {top: 50px;}
-                90% {top: 50px;}
-                100% {top: -300px;}
-            }
-
-
-            .usersTable {
-                font-family: Arial, Helvetica, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-
-            .usersTable td, .usersTable th {
-                border: 1px solid #ddd;
-                padding: 8px;
-            }
-
-            .usersTable tr:nth-child(even){background-color: #f2f2f2;}
-
-            .usersTable tr:hover {background-color: #ddd;}
-
-            .usersTable th {
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: left;
-            }
-
-            input[type=text], input[type=email], input[type=password], select {
-                width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-
-            input[type=submit] {
-                width: 100%;
-                background-color: #4CAF50;
-                color: white;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            input[type=submit]:hover {
-                background-color: #45a049;
-            }
-
-            .formContainer {
-                border-radius: 5px;
-                background-color: #f2f2f2;
-                padding: 20px;
-            }
-
-
-        </style>
+        
     </head>
     <body>
         <c:if test="${message != null}">
@@ -118,9 +15,7 @@
         </div>
         </c:if>
 
-        <div class="grid-container">
-            <div class="grid-item">
-                <div class="formContainer">
+
                     <h3>Add User</h3>
 
                     <form method="POST" action="users">
@@ -177,10 +72,7 @@
 
                     </c:forEach>
                 </table>
-            </div>
-
-            <div class="grid-item">
-                <div class="formContainer">
+ 
                     <h3>Edit User</h3>
                     <form method="POST" action="users">
                         <input placeholder="First Name" type="text" required name="firstname" value="${editUser.firstName}" />
@@ -197,8 +89,5 @@
                         <br>
                         <input type="submit" value="Update" />
                     </form>
-                </div>
-            </div>  
-        </div>
     </body>
 </html>
